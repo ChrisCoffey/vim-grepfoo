@@ -1,7 +1,7 @@
-nnoremap <leader>g :set operatorfunc=GrepOperator<cr>g@
-vnoremap <leader>g :<c-u>call GrepOperator(visualmode())<cr>
+nnoremap <leader>g :set operatorfunc=<SID>GrepOperator<cr>g@
+vnoremap <leader>g :<c-u>call <SID>GrepOperator(visualmode())<cr>
 
-function! GrepOperator(type)
+function! s:GrepOperator(type)
     let unnamed_reg = @@
 
     if a:type ==# 'v'
