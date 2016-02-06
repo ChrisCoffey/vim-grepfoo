@@ -2,6 +2,8 @@ nnoremap <leader>g :set operatorfunc=GrepOperator<cr>g@
 vnoremap <leader>g :<c-u>call GrepOperator(visualmode())<cr>
 
 function! GrepOperator(type)
+    let unnamed_reg = @@
+
     if a:type ==# 'v'
         normal! `<v`>y
     elseif a:type ==# 'char'
@@ -12,6 +14,8 @@ function! GrepOperator(type)
 
      silent execute "grep -R " . shellescape(@@) . " ."
     copen
+    
+    let 
 endfunction
 
 
