@@ -15,7 +15,7 @@ function! GrepOperator(type)
      silent execute "grep -R " . shellescape(@@) . " ."
     copen
     
-    let 
+    let @@ = unnamed_reg
 endfunction
 
 
